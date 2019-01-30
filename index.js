@@ -9,4 +9,4 @@ function randomInteger(min, max) {
 setInterval(()=>{
     console.clear();
     robot.mouseClick();
-}, (randomInteger(1, 10) * 1000))
+}, (randomInteger(1, 5) * 1000))
