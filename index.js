@@ -2,7 +2,7 @@ const robot = require("robotjs");
 const ioHook = require("iohook");
 
 const CTRL = 29;
-const ALT = 56;
+//const ALT = 56;
 const F7 = 65;
 
 class Clicker {
@@ -13,9 +13,9 @@ class Clicker {
         ioHook.start();
 
         ioHook.registerShortcut([CTRL, F7], (keys) => {
-            
+            console.clear();
             this.isEnabled = !this.isEnabled;
-            console.log(this.isEnabled ? `enabled`: `disabled`);
+            console.log(this.isEnabled ? `enabled` : `disabled`);
             if (!this.isEnabled) {
                 clearTimeout(this.timeoutId);
                 this.timeoutId = null;
@@ -27,10 +27,9 @@ class Clicker {
 
     doClick() {
         if (this.isEnabled) {
-            let pause = (this.randomInteger(1, 10) * 1000);
+            let pause = (this.randomInteger(1, 5) * 1000);
             this.timeoutId = setTimeout(() => {
-                console.clear();
-                robot.mouseClick();
+                robot.keyTap('alt');
                 this.doClick();
             }, pause);
         }
@@ -43,4 +42,5 @@ class Clicker {
     }
 }
 
+console.clear();
 new Clicker();
