@@ -1,5 +1,6 @@
 const robot = require("robotjs");
 const ioHook = require("iohook");
+const settings = require('./settings');
 
 const CTRL = 29;
 //const ALT = 56;
@@ -27,7 +28,7 @@ class Clicker {
 
     doClick() {
         if (this.isEnabled) {
-            let pause = (this.randomInteger(1, 5) * 1000);
+            let pause = (this.randomMilliseconds(settings.frequency.min, settings.frequency.max));
             this.timeoutId = setTimeout(() => {
                 robot.keyTap('alt');
                 this.doClick();
@@ -35,9 +36,9 @@ class Clicker {
         }
     }
 
-    randomInteger(min, max) {
+    randomMilliseconds(min, max) {
         let rand = min - 0.5 + Math.random() * (max - min + 1)
-        rand = Math.round(rand);
+        rand = Math.round(rand* 1000);
         return rand;
     }
 }
