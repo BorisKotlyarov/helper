@@ -12,9 +12,10 @@ class Clicker {
 
         ioHook.start();
 
-        ioHook.registerShortcut([CTRL, ALT, F7], (keys) => {
-
+        ioHook.registerShortcut([CTRL, F7], (keys) => {
+            
             this.isEnabled = !this.isEnabled;
+            console.log(this.isEnabled ? `enabled`: `disabled`);
             if (!this.isEnabled) {
                 clearTimeout(this.timeoutId);
                 this.timeoutId = null;
