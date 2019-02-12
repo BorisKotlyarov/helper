@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "wp-name": "bin/helper"
+    "helper": "bin/helper"
   },
   "scripts": {
     "start": "node index.js"
