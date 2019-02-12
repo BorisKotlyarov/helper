@@ -1,14 +1,21 @@
 {
-  "name": "clicker",
-  "version": "1.0.4",
+  "name": "helper",
+  "version": "1.0.5",
   "description": "",
-  "main": "index.js",
   "bin": {
     "helper": "bin/helper"
   },
   "scripts": {
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BorisKotlyarov/helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BorisKotlyarov/helper/issues"
+  },
+  "homepage": "https://github.com/BorisKotlyarov/helper#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
