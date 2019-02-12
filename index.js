@@ -47,7 +47,6 @@ class Clicker {
     doClick() {
         if (this.isEnabled) {
             let pause = (this.randomMilliseconds(settings.frequency.min, settings.frequency.max));
-            console.log(pause)
             this.timeoutId = setTimeout(() => {
                 robot.keyTap('alt');
                 this.doClick();
