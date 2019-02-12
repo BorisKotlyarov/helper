@@ -9,6 +9,8 @@ git https://github.com/BorisKotlyarov/helper.git
 ## global install (don't work at some OS) ##
 ```bash
 npm i -g git+https://github.com/BorisKotlyarov/helper.git
+# check global installation
+helper -v
 ```
 
 ## Start ##
@@ -20,7 +22,6 @@ npm start
 ```
 Global start
 ```bash
-cd 
 helper
 ```
 When you need to use the following shortcuts `CTRL+F7`
