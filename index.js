@@ -19,7 +19,7 @@ class Clicker {
         switch (argv[0]) {
 
             case new RegExp('^-(v||version)$', 'i').test(argv[0]) && argv[0]:
-                console.log('helper version', pjson.version);
+                console.log('helper.js version', pjson.version);
                 break;
 
             default:

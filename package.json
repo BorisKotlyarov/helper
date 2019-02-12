@@ -1,9 +1,9 @@
 {
   "name": "helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "bin": {
-    "helper": "./bin/helper"
+    "helper": "bin/helper.js"
   },
   "scripts": {
     "start": "node index.js"
