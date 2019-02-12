@@ -3,6 +3,11 @@
 ## Install ## 
 
 ```bash
+git https://github.com/BorisKotlyarov/helper.git
+```
+
+## global install (don't work at some OS) ##
+```bash
 npm i -g git+https://github.com/BorisKotlyarov/helper.git
 ```
 
@@ -10,6 +15,12 @@ npm i -g git+https://github.com/BorisKotlyarov/helper.git
 
 Run helper in your console using below command
 ```bash
+cd helper
+npm start
+```
+Global start
+```bash
+cd 
 helper
 ```
 When you need to use the following shortcuts `CTRL+F7`
