@@ -3,7 +3,7 @@
 ## Install ## 
 
 ```bash
-git https://github.com/BorisKotlyarov/helper.git
+git clone https://github.com/BorisKotlyarov/helper.git
 ```
 
 ## global install (don't work at some OS) ##
@@ -38,6 +38,10 @@ Troubles with install `robotjs` http://robotjs.io/docs/building
 Troubles with global install
 
 `npm ERR! Error: EACCES: permission denied, access`
+Install necessary libraries
+```bash
+sudo apt-get install libxtst-dev libpng++-dev build-essential
+```
 
 ```bash
 sudo chown -R $(whoami) ~/.npm
