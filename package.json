@@ -2,12 +2,15 @@
   "name": "helper",
   "version": "1.0.8",
   "description": "",
-  "main": "index.js",
+  "main": "electronProcess.js",
   "bin": {
     "helper": "./bin/helper.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-rebuild"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "iohook": "^0.3.1",
-    "robotjs": "^0.5.1"
+    "systray": "^1.0.5",
+    "node-key-sender": "^1.0.11"
+  },
+  "devDependencies": {
+    "electron": "^5.0.0",
+    "electron-builder": "^20.39.0",
+    "electron-rebuild": "^1.8.5",
+    "iohook": "^0.3.1"
+  },
+  "build": {
+    "appId": "helper.app"
+  },
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "1.4.7"
   }
 }
