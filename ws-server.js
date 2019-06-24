@@ -5,7 +5,7 @@ const Actions = require('./ws/actions');
 class WsServer {
 
     constructor(options = {}) {
-        this.port = process.env.PORT || options.port || 8080;
+        this.port = process.env.PORT || options.port || 64892;
         this.host = options.host || '127.0.0.1';
         this.actions = new Actions(this);
 

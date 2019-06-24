@@ -3,7 +3,6 @@ class Actions {
     constructor(parent) {
         this.parent = parent;
         this.client = null;
-
     }
 
     onMessage(incoming) {
