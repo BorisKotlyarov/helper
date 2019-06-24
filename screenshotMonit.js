@@ -13,7 +13,7 @@ class ScreenshotMonitor {
 
         this.dbus.stdout.on('data', (data) => {
             data = data.toString();
-            if (data.indexOf(`web.telegram.org`) !== -1) {
+            if (data.indexOf(`Screenshot taken`) !== -1) {
                 callback(data)
             }
         });
