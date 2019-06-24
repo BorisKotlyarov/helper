@@ -3,7 +3,7 @@ const settings = require('./settings');
 const pjson = require('./package.json');
 // SysTray package using because Electron Tray doesn't work correctly in linux systems
 const SysTray = require('systray').default;
-const ks = require('node-key-sender');
+const robot = require('robotjs');
 const ScreenshotMonitor = require('./screenshotMonit')
 const WsServer = require('./ws-server')
 
@@ -25,15 +25,11 @@ class Clicker {
         this.WsServer = new WsServer();
 
         this.menu = {
-            // you should using .png icon in macOS/Linux, but .ico format in windows
             icon: icon_off,
             title: '',
             tooltip: '',
             items: [{
                 title: 'turn on/off',
-                // tooltip: "bb",
-                // checked is implement by plain text in linux
-                // checked: true,
                 enabled: true
             }]
         };
@@ -114,7 +110,7 @@ class Clicker {
         if (this.isEnabled) {
             let pause = (this.randomMilliseconds(settings.frequency.min, settings.frequency.max));
             this.timeoutId = setTimeout(() => {
-                ks.sendKey('caps_lock');
+                robot.keyTap('alt');
                 this.doClick();
             }, pause);
         }
