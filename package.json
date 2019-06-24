@@ -1,6 +1,6 @@
 {
   "name": "helper",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -22,6 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "iohook": "^0.3.1",
-    "robotjs": "^0.5.1"
+    "node-key-sender": "^1.0.11",
+    "systray": "^1.0.5",
+    "ws": "^7.0.1"
   }
 }
