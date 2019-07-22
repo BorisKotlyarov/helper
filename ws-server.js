@@ -6,7 +6,7 @@ class WsServer {
 
     constructor(options = {}) {
         this.port = process.env.PORT || options.port || 64892;
-        this.host = options.host || '127.0.0.1';
+        this.host = options.host || '0.0.0.0';
         this.actions = new Actions(this);
 
         this.socket = new WebSocketServer.Server({port: this.port, host: this.host});
