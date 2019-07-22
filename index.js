@@ -87,8 +87,9 @@ class Clicker {
                     this.menu.icon = icon_on;
                     this.screenshotMonitor.start(() => {
                         // send event to ws socket
-                        this.WsServer.actions.send('screenshot', {time: new Date().getTime()})
-
+                        let date = new Date();
+                        console.log(`screenshot at: `, date)
+                        this.WsServer.actions.send('screenshot', {time: date.getTime()})
                     });
                     this.doClick();
                 }
