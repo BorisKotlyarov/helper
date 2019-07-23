@@ -1,10 +1,10 @@
-// const robot = require("robotjs");
-// const ioHook = require("iohook");
+const robot = require("robotjs");
+const ioHook = require("iohook");
 const settings = require('./settings');
 const pjson = require('./package.json');
 // SysTray package using because Electron Tray doesn't work correctly in linux systems
 const SysTray = require('systray').default;
-const ks = require('node-key-sender');
+// const ks = require('node-key-sender');
 
 
 const CTRL = 29;
@@ -59,11 +59,11 @@ class Clicker {
     init() {
 
         // hot key registration
-/*        ioHook.start();
-
+        ioHook.start();
+        
         ioHook.registerShortcut([CTRL, F7], (keys) => {
             this.toggleWorker(0);
-        });*/
+        });
 
         // system tray event registration
         this.systray.onClick(action => {
@@ -109,7 +109,7 @@ class Clicker {
         if (this.isEnabled) {
             let pause = (this.randomMilliseconds(settings.frequency.min, settings.frequency.max));
             this.timeoutId = setTimeout(() => {
-                ks.sendKey('caps_lock');
+                robot.keyTap('alt');
                 this.doClick();
             }, pause);
         }

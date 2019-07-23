@@ -3,14 +3,11 @@
   "version": "1.0.8",
   "description": "",
   "main": "electronProcess.js",
-  "bin": {
-    "helper": "./bin/helper.js"
-  },
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "postinstall": "electron-rebuild"
+    "rebuild": "npm rebuild --runtime=electron --target=4.2.8 --disturl=https://atom.io/download/atom-shell --abi=69"
   },
   "repository": {
     "type": "git",
@@ -24,14 +21,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "systray": "^1.0.5",
-    "node-key-sender": "^1.0.11"
+    "iohook": "0.3.1",
+    "robotjs": "0.4.0",
+    "systray": "^1.0.5"
   },
   "devDependencies": {
-    "electron": "^5.0.0",
+    "electron": "4.2.8",
     "electron-builder": "^20.39.0",
     "electron-rebuild": "^1.8.5",
-    "iohook": "^0.3.1"
+    "node-gyp": "^5.0.3"
   },
   "build": {
     "appId": "helper.app"
