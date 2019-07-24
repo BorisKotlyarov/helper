@@ -21,9 +21,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "iohook": "0.3.1",
-    "robotjs": "0.4.0",
-    "systray": "^1.0.5"
+    "iohook": "0.5.1",
+    "robotjs": "0.5.1",
+    "ws": "^7.0.1"
   },
   "devDependencies": {
     "electron": "4.2.8",
@@ -37,5 +37,29 @@
   "cmake-js": {
     "runtime": "electron",
     "runtimeVersion": "1.4.7"
+  },
+  "iohook": {
+    "targets": [
+      "electron-69"
+    ],
+    "platforms": [
+      "win32",
+      "linux"
+    ],
+    "arches": [
+      "x64"
+    ]
+  },
+  "robotjs": {
+    "targets": [
+      "electron-57"
+    ],
+    "platforms": [
+      "win32",
+      "linux"
+    ],
+    "arches": [
+      "x64"
+    ]
   }
 }

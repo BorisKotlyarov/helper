@@ -1,35 +1,27 @@
-const { app, Menu, Tray, nativeImage } = require('electron');
-const path = require('path');
-const robot = require("robotjs");
+const Clicker = require("./index");
+
+// https://github.com/octalmage/robotjs/releases
+// https://github.com/wilix-team/iohook/releases
+
+const pjson = require('./package.json');
+let argv = process.argv.slice();
+
+argv.splice(0, 2);
+
+switch (argv[0]) {
+
+    case new RegExp('^-(v||version)$', 'i').test(argv[0]) && argv[0]:
+        console.log('helper version', pjson.version);
+        break;
+
+    default:
+        new Clicker();
+}
 
 
-
-const image = nativeImage.createFromPath(path.join(__dirname, '/home.png'));
+// const image = nativeImage.createFromPath(path.join(__dirname, '/home.png'));
 // console.log(app)
 
 // const Clicker = require('./index');
 
-let tray = null;
 
-app.on('ready', () => {
-    try {
-        // new Clicker();
-        tray = new Tray(image);
-        // tray.setTitle('xcvxcv');
-
-
-
-        //tray.setImage(image);  //use for set new tray icon
-        // const contextMenu = Menu.buildFromTemplate([
-        //     { label: 'Item1'}
-        // ])
-        //
-        // tray.setContextMenu(contextMenu)
-
-        console.log(`gggg`)
-
-    } catch (e) {
-        console.log(e)
-        app.exit()
-    }
-})
