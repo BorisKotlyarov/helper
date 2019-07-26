@@ -1,12 +1,15 @@
 {
   "name": "helper",
   "version": "1.0.8",
-  "description": "",
+  "description": "Helper app. It help you to chill out.",
+  "product-descriptionn": "helper app",
   "main": "electronProcess.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
+    "deb64": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64",
+    "build": "electron-packager . app --platform linux --arch x64 --out dist/",
     "rebuild": "npm rebuild --runtime=electron --target=4.2.8 --disturl=https://atom.io/download/atom-shell --abi=69"
   },
   "repository": {
@@ -18,7 +21,7 @@
   },
   "homepage": "https://github.com/BorisKotlyarov/helper#readme",
   "keywords": [],
-  "author": "",
+  "author": "Boris Kotlyarov <boris.kotlyarov1985@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "iohook": "0.5.1",
@@ -29,10 +32,20 @@
     "electron": "4.2.8",
     "electron-builder": "^20.39.0",
     "electron-rebuild": "^1.8.5",
+    "electron-packager": "^14.0.2",
     "node-gyp": "^5.0.3"
   },
   "build": {
-    "appId": "helper.app"
+    "appId": "helper.app",
+    "linux": {
+      "target": [
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
   },
   "cmake-js": {
     "runtime": "electron",
