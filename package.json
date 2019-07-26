@@ -2,7 +2,7 @@
   "name": "helper",
   "version": "1.0.8",
   "description": "Helper app. It help you to chill out.",
-  "product-descriptionn": "helper app",
+  "product-descriptionn": "Helper app. It help you to chill out.",
   "main": "electronProcess.js",
   "scripts": {
     "start": "electron .",
